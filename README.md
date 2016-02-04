@@ -1,5 +1,5 @@
-# 42_Camagru
-## TIER 1 | Projet WEB<br>
+# Camagru
+## Projet Web | Tier I | Ecole 42
 ### Consigne:<br>
 *Vous n’avez pas le droit d’utiliser de framework, micro-framework, librairies ou quoi
 que ce soit provenant du monde extérieur (excepté les polices de caractères), aussi bien
