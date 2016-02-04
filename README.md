@@ -11,3 +11,17 @@ et définir le mode d’erreur 2 sur PDO::ERRMODE_EXCEPTION.*
 
 ## Résumé
 Petite application web permettant de réaliser des montages basiques à l’aide de votre webcam et d’images prédéfinies.
+
+## TODO
+1. PARTIE UTILISATEUR
+	* Mail de reinitialisation mot de passe
+2. PARTIE MONTAGE
+	* _Section principale
+		* Apercu webcam et Upload image
+		* Liste des images superposables
+		* Bouton pour prendre la photo
+	* _Section laterale
+		* Miniatures photos prises precedement
+		* Possibilite de supprimer les montages	
+3. PARTIE GALERIE
+	*
