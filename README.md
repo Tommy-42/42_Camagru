@@ -16,12 +16,16 @@ Petite application web permettant de réaliser des montages basiques à l’aide
 1. PARTIE UTILISATEUR
 	* Mail de reinitialisation mot de passe
 2. PARTIE MONTAGE
-	* _Section principale
+	* Section principale
 		* Apercu webcam et Upload image
 		* Liste des images superposables
 		* Bouton pour prendre la photo
-	* _Section laterale
+	* Section laterale
 		* Miniatures photos prises precedement
 		* Possibilite de supprimer les montages	
 3. PARTIE GALERIE
-	*
+	* Affichage de tout les montages de chaque membres ( pagination infinie )
+	* Commentaires et Like des montages si connecté
+	* Lorsque Commentaires sur un montage, notif email a l'auteur
+	* Pouvoir partager ses images sur les réseaux sociaux.
+	* Pouvoir faire un rendu d’un GIF animé
