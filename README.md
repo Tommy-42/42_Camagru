@@ -1,5 +1,5 @@
 # 42_Camagru
-Projet Web:
+Projet Web:<br>
 Vous n’avez pas le droit d’utiliser de framework, micro-framework, librairies ou quoi
 que ce soit provenant du monde extérieur (excepté les polices de caractères), aussi bien
 pour le serveur que pour le client, donc pas de Bootstrap, pas de jQuery, pas de Symfony
