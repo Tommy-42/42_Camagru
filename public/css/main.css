@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: rgba(5, 183, 237, 1);
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    text-align: center;
+    font-family: Raleway, Monaco;
+}
+ul { list-style: none; margin: 0; }
+
+a, a:link, a:visited, a:hover, a:active, a:focus {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+/* MISC */
+.text-uppercase { text-transform: uppercase; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-red { color: red; }
+.center-block {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.icon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 20px;
+	padding: 6px 6px;
+	margin: 0px 0px 10px 0px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.btn-default {
+	color: #333;
+	background-color: #fff;
+	border-color: #ccc;
+}
+.btn-primary {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+}
+.btn-success {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.btn-info {
+	color: #fff;
+	background-color: #5bc0de;
+	border-color: #46b8da;
+}
+.btn-warning {
+	color: #fff;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.no-margin { margin: 0; }
+
+.list-inline li { display: inline-block; }
+
+.separator { color: #777; }
+
+.container-box {
+	color: rgb(6, 89, 123);
+}
+/* MISC */
+
+/* HEADER */
+.header {
+	background-color: rgba(248, 248, 248, 0.6);
+	min-height: 30px;
+	width: 100%;
+	top: 0;
+	position: absolute;
+}
+.header-container {
+	padding: 0px 20px 0px 20px;
+}
+.header-list { margin-top: 10px; }
+
+.logout-icon:before {
+	content: "\e017";
+}
+/* HEADER */
+
+/* MAIN */
+.container {
+	margin-top: 60px;
+	width: 100%;
+	padding: 0px 15px 0px 15px;
+}
+
+.viewer {
+	display: inline-block;
+	background-color: rgba(248, 248, 248, 0.8);
+	min-height: 100px;
+	padding: 10px 60px 40px 40px;
+}
+/* MAIN */
+
+/* Inscription */
+.p-error { color: red; margin-bottom: 15px; }
+.p-success { color: green; margin-top: 15px; }
+/* Inscription */
