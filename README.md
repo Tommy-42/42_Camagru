@@ -1,5 +1,6 @@
 # 42_Camagru
-Projet Web:<br>
+# TIER 1 | Projet WEB<br>
+Consigne:<br>
 Vous n’avez pas le droit d’utiliser de framework, micro-framework, librairies ou quoi
 que ce soit provenant du monde extérieur (excepté les polices de caractères), aussi bien
 pour le serveur que pour le client, donc pas de Bootstrap, pas de jQuery, pas de Symfony
@@ -9,5 +10,5 @@ Vous devez utiliser l’interface d’abstraction PDO 1 pour acceder à votre ba
 et définir le mode d’erreur 2
 sur PDO::ERRMODE_EXCEPTION.
 
-Résumé: 
+# Résumé 
 Petite application web permettant de réaliser des montages basiques à l’aide de votre webcam et d’images prédéfinies.
