@@ -15,6 +15,7 @@ Petite application web permettant de réaliser des montages basiques à l’aide
 ## TODO
 1. PARTIE UTILISATEUR
 	* Mail de reinitialisation mot de passe
+	* Deconnection utilisateur
 2. PARTIE MONTAGE
 	* Section principale
 		* Apercu webcam et Upload image
