@@ -131,6 +131,7 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
 .logout-icon:before {
 	content: "\e017";
 }
+.btn-logout { cursor: pointer; }
 /* HEADER */
 
 /* MAIN */
