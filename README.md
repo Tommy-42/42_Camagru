@@ -21,8 +21,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Connection ( Ajax )
 	* Deconnection ( Ajax )
 2. PARTIE MONTAGE
-
-	
 3. PARTIE GALERIE
 
 
@@ -31,8 +29,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Mail de reinitialisation mot de passe
 2. PARTIE MONTAGE
 	* Section principale
-		* Apercu webcam et Upload image
-		* Liste des images superposables
+		* Apercu webcam et Upload image		* Liste des images superposables
 		* Bouton pour prendre la photo
 	* Section laterale
 		* Miniatures photos prises precedement

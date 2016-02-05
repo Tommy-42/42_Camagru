@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
 						.innerHTML = "<h1>Connexion Validé</h1>";
 					window.setTimeout(function() {
 						location.href = "?p=index";
-					}, 2000);
+					}, 1000);
 
 				}
 				else {
