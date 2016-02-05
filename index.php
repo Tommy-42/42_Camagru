@@ -32,5 +32,6 @@
     	<?php include_once 'private/rooting.php' ?>
     	</div>
     </div> <!-- /container -->
+<script src="public/js/main.js" type="text/javascript"></script>
 </body>
 </html>
