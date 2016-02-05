@@ -11,6 +11,8 @@ et définir le mode d’erreur sur PDO::ERRMODE_EXCEPTION.*
 
 ## Résumé
 Petite application web permettant de réaliser des montages basiques à l’aide de votre webcam et d’images prédéfinies.
+<br>
+Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 
 ## READY
 
