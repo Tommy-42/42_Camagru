@@ -9,7 +9,7 @@
 					<li>Bonjour '. $_SESSION['user'] .' </li>
 					<li class="separator">&nbsp;|&nbsp;</li>
 					<li>
-						<span class="icon logout-icon text-red"></span>
+						<span class="icon logout-icon text-red btn-logout"></span>
 					</li>
 				</ul>
 			</div>
