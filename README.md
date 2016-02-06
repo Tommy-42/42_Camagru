@@ -41,3 +41,5 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Lorsque Commentaires sur un montage, notif email a l'auteur
 	* Pouvoir partager ses images sur les réseaux sociaux.
 	* Pouvoir faire un rendu d’un GIF animé
+4. PARTIE SQL
+	* Creation base de donnee COMMENTS / LIKES / MONTAGES
