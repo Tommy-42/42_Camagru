@@ -25,6 +25,8 @@
 
 		// password syntax check
 		if( empty($password) ) $error[] = "Password Vide";
+		if( !empty($password) && strlen($password) < 8 ) $error[] = "Password trop petit ( 8 caracteres min )";
+
 
 		if( empty($error) ) {
 
@@ -121,4 +123,129 @@
 		else
 			die( json_encode($error) );
 	}
+
+	/*
+	**	RESET PASSWORD
+	*/
+	if( !empty($_POST['reset_password']) ) {
+
+		$email = $_POST['email'];
+
+		$error = array();
+		// email syntax check
+		if( strlen($email) > 256 ) $error[] = "Email trop long ( <= 256 )";
+		if( !filter_var($email, FILTER_VALIDATE_EMAIL) ) $error[] = "Invalide Email";
+
+		if( empty($error) ) {
+
+			$sql = 'SELECT * FROM users WHERE email = :email';
+			$mysql = $db->prepare($sql);
+			$mysql->bindValue(':email', $email);
+			$mysql->execute();
+
+			$result = $mysql->fetchAll( PDO::FETCH_ASSOC );
+
+			if( !empty($result) ) {
+
+				$username = $result[0]['username'];
+				$token_password = hash('whirlpool', $username.$email);
+				
+				if( $result[0]['token_password'] != '' ) {
+					$update = 'UPDATE users SET token_password = :token_password WHERE email = :email';
+					$mysql = $db->prepare($update);
+					$mysql->bindValue(':email', $email);
+					$mysql->bindValue(':token_password', '');
+					$mysql->execute();
+				}
+				// UPDATE `users` SET `token_password` = 'tt' WHERE `users`.`id` = 1;
+				$update = 'UPDATE users SET token_password = :token_password WHERE email = :email';
+				$mysql = $db->prepare($update);
+				$mysql->bindValue(':email', $email);
+				$mysql->bindValue(':token_password', $token_password);
+				$mysql->execute();
+				if( $mysql->rowCount() == 1 ) {
+
+					$to = $email;
+					$from = 'noreply@camagru.fr';
+					$subject = 'Reinitialisation mot de passe';
+					$message = "
+						Bonjour $username,\n
+						Cliquez sur le lien suivant pour réinitialiser votre mot de passe :\n
+						http://127.0.0.1:4242/camagru/index.php?p=reset_password&t=$token_password
+					";
+
+					$headers = "From: $from"; 
+					$ok = @mail($to, $subject, $message, $headers, "-f " . $from);
+					die( json_encode("success") );
+				}
+				else
+					die( json_encode("Error Code: " . $mysql->errorCode()) );
+			}
+			else {
+				$error[] = 'L\'email n\'existe pas';
+				die( json_encode($error) );
+			}
+		}
+		else
+			die( json_encode($error) );
+	}
+	
+	if( !empty($_POST['change_password']) ) {
+
+		$password = $_POST['password'];
+		$confirm = $_POST['confirm'];
+		$token_password = $_POST['token'];
+
+		$error = array();
+
+		if( empty($password) || empty($confirm) ) 
+			$error[] = "Champs vide";
+		// exacte same password or return
+		if( $password !== $confirm)
+			$error[] = "Les mots de passe ne match pas";
+		if( strlen($password) < 8 || strlen($confirm) < 8 )
+			$error[] = "Password trop petit ( 8 caracteres min )";
+			
+		if( empty($error) ) {
+
+			$sql = 'SELECT * FROM users WHERE token_password = :token_password';
+			$mysql = $db->prepare($sql);
+			$mysql->bindValue(':token_password', $token_password);
+			$mysql->execute();
+
+			$result = $mysql->fetchAll( PDO::FETCH_ASSOC );
+
+			if( !empty($result) ) {
+
+				$new_password = hash('whirlpool', $password);
+
+				// UPDATE `users` SET `token_password` = 'tt' WHERE `users`.`id` = 1;
+				$update = 'UPDATE users SET password = :password WHERE token_password = :token_password';
+				$mysql = $db->prepare($update);
+				$mysql->bindValue(':password', $new_password);
+				$mysql->bindValue(':token_password', $token_password);
+				$mysql->execute();
+				if( $mysql->rowCount() == 1 ) {
+					
+					$update = 'UPDATE users SET token_password = :reset_token WHERE token_password = :token_password';
+					$mysql = $db->prepare($update);
+					$mysql->bindValue(':token_password', $token_password);
+					$mysql->bindValue(':reset_token', '');
+					$mysql->execute();
+					
+					die( json_encode("success") );
+				}
+				else
+					die( json_encode("Error Code: " . $mysql->errorCode()) );
+			}
+			else {
+
+				$error[] = 'Mauvais Token';
+				die( json_encode($error) );
+			}
+		}
+		else
+			die( json_encode($error) );
+	}
+
 ?>
