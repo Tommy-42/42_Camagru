@@ -29,6 +29,12 @@
 				$mysql->bindValue(':token_email', $token_email);
 				$mysql->execute();
 				if( $mysql->rowCount() == 1 ) {
+
+					$update = 'UPDATE users SET token_email = "" WHERE token_email = :token_email';
+					$mysql = $db->prepare($update);
+					$mysql->bindValue(':token_email', $token_email);
+					$mysql->execute();
+					
 					include_once $path . '/public/view/valide_account.html';
 				}
 				else
