@@ -17,10 +17,10 @@ body {
 }
 ul { list-style: none; margin: 0; }
 
-a, a:link, a:visited, a:hover, a:active, a:focus {
+a:-webkit-any-link {
+	cursor: pointer !important;
 	text-decoration: none;
 	color: inherit;
-	cursor: pointer;
 }
 
 /* MISC */
@@ -46,12 +46,17 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
 	-webkit-font-smoothing: antialiased;
 }
 
+.form-group { 
+	display: block;
+	margin-bottom: 10px;
+}
+
 .form-control {
 	display: block;
-	width: 100%;
+	width: 90%;
 	height: 20px;
 	padding: 6px 6px;
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 0px 0px;
 	font-size: 14px;
 	line-height: 1.42857143;
 	color: #555;
@@ -110,9 +115,6 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
 
 .separator { color: #777; }
 
-.container-box {
-	color: rgb(6, 89, 123);
-}
 /* MISC */
 
 /* HEADER */
@@ -145,7 +147,8 @@ a, a:link, a:visited, a:hover, a:active, a:focus {
 	display: inline-block;
 	background-color: rgba(248, 248, 248, 0.8);
 	min-height: 100px;
-	padding: 10px 60px 40px 40px;
+	padding: 10px 40px 10px 40px;
+	color: rgb(6, 89, 123);
 }
 /* MAIN */
 
