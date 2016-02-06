@@ -21,7 +21,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Connection ( Ajax )
 	* Mail de reinitialisation mot de passe ( Ajax )
 	* Deconnection ( Ajax )
-	
 2. PARTIE MONTAGE
 3. PARTIE GALERIE
 
