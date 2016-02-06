@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function(){
 		event.preventDefault();
 
 		// get information
-		var email = document.getElementsByClassName("email-input")[0].value
-		var password = document.getElementsByClassName("password-input")[0].value
+		var email = document.getElementsByClassName("email-input")[0].value;
+		var password = document.getElementsByClassName("password-input")[0].value;
 
 		var send = 'connexion=1&' +
 			'&email='+ encodeURIComponent(email) +
