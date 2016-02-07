@@ -29,6 +29,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 
 ## TODO
 1. PARTIE UTILISATEUR
+	* Securisation mot de passe ( 1 chiffre min )
 2. PARTIE MONTAGE
 	* Section principale
 		* Apercu webcam et Upload image
