@@ -24,9 +24,9 @@
 		if( !filter_var($email, FILTER_VALIDATE_EMAIL) ) $error[] = "Invalide Email";
 
 		// password syntax check
-		if( empty($password) ) $error[] = "Password Vide";
-		if( !empty($password) && strlen($password) < 8 ) $error[] = "Password trop petit ( 8 caracteres min )";
-
+		if( empty($password) ) $error[] = "Mot de passe Vide";
+		if( !empty($password) && strlen($password) < 8 ) $error[] = "Mot de passe trop petit ( 8 caracteres min )";
+		if( ctype_alpha($password) ) $error[] = "Le mot de passe doit contenir au moins un chiffre";
 
 		if( empty($error) ) {
 
