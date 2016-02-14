@@ -15,9 +15,9 @@ Petite application web permettant de réaliser des montages basiques à l’aide
 Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 
 ## READY
-
 1. PARTIE UTILISATEUR
 	* Inscription avec mail de confirmation ( Ajax )
+	* Securisation mot de passe ( 1 chiffre min )
 	* Connection ( Ajax )
 	* Mail de reinitialisation mot de passe ( Ajax )
 	* Deconnection ( Ajax )
@@ -29,7 +29,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 
 ## TODO
 1. PARTIE UTILISATEUR
-	* Securisation mot de passe ( 1 chiffre min )
 2. PARTIE MONTAGE
 	* Section principale
 		* Apercu webcam et Upload image
