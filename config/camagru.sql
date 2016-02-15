@@ -74,13 +74,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `token_email`, `token_password`, `active`) VALUES
-(1, 'tommy', 'tommy.pageard@gmail.com', 'fa1b844d917c7a061287eeed319ee603f880e8778f840197a8ade913a4557bec0a88be0e973b5e770cd182e4c8cf43269d5690d7040df2f203e85a27578d3a0d', '', '', 1);
-
---
 -- Index pour les tables exportées
 --
 
