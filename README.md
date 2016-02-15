@@ -24,7 +24,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 2. PARTIE MONTAGE
 3. PARTIE GALERIE
 4. PARTIE SQL
-	* Base USERS 100%
+	* USERS / COMMENTS / LIKES / MONTAGES 100%
 
 
 ## TODO
@@ -44,4 +44,3 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Pouvoir partager ses images sur les réseaux sociaux.
 	* Pouvoir faire un rendu d’un GIF animé
 4. PARTIE SQL
-	* Creation base de donnee COMMENTS / LIKES / MONTAGES
