@@ -2,7 +2,7 @@
 -- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost:4646
+-- Client :  localhost:3306
 -- Généré le :  Lun 15 Février 2016 à 04:32
 -- Version du serveur :  5.6.28
 -- Version de PHP :  5.5.31
