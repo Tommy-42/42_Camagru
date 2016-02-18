@@ -1,5 +1,5 @@
 <?php
-	$DB_HOST = "127.0.0.1:8080";
+	$DB_HOST = "127.0.0.1:3306";
 	$DB_TYPE = "mysql";
 	$DB_CHARSET = "UTF8";
 	$DB_OPTIONS = array(PDO::ERRMODE_EXCEPTION => true);
