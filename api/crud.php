@@ -58,7 +58,7 @@
 						Bonjour $username,\n
 						Nous vous remercions pour votre demande d'inscription.\n
 						Cliquez sur le lien suivant pour activer votre compte :\n
-						http://127.0.0.1:4242/camagru/index.php?p=inscription&t=$token_email
+						http://127.0.0.1:8080/camagru/index.php?p=inscription&t=$token_email
 					";
 
 					$headers = "From: $from"; 
@@ -171,7 +171,7 @@
 					$message = "
 						Bonjour $username,\n
 						Cliquez sur le lien suivant pour réinitialiser votre mot de passe :\n
-						http://127.0.0.1:4242/camagru/index.php?p=reset_password&t=$token_password
+						http://127.0.0.1:8080/camagru/index.php?p=reset_password&t=$token_password
 					";
 
 					$headers = "From: $from"; 
