@@ -6,7 +6,13 @@
 					<li><h1 class="no-margin">CAMAGRU</h1></li>
 				</ul>
 				<ul class="list-inline text-right pull-right header-list">
-					<li>Bonjour '. $_SESSION['user'] .' </li>
+					<li>
+						<a href="?p=index">Galerie</a>
+					</li>
+					<li class="separator">&nbsp;|&nbsp;</li>
+					<li>
+						<a href="?p=montage">Montage</a>
+					</li>
 					<li class="separator">&nbsp;|&nbsp;</li>
 					<li>
 						<span class="icon logout-icon text-red btn-logout"></span>

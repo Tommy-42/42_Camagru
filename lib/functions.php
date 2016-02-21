@@ -7,5 +7,10 @@ function d( $var, $die = true ) {
 
 	if( $die ) die;
 }
-
+function is_log() {
+	if( !empty($_SESSION['user']) && !empty($_SESSION['email']) )
+		return TRUE;
+	else
+		return FALSE;
+}
 ?>

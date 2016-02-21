@@ -3,7 +3,13 @@
 	if( !empty($_GET['p']) && !isset($_GET['t']) ) {
 		switch ( $_GET['p'] ) {
 			case 'index':
-				include_once $path . '/public/view/index.html';
+				include_once $path . '/public/view/index.php';
+				break;
+			case 'montage':
+				if( is_log() )
+					include_once $path . '/public/view/montage.html';
+				else
+					header('Location: ?p=index');
 				break;
 			case 'inscription':
 				include_once $path . '/public/view/inscription.html';
@@ -49,7 +55,7 @@
 		}
 	}
 	else {
-		include_once $path . '/public/view/index.html';
+		include_once $path . '/public/view/index.php';
 	}
 
 
