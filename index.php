@@ -22,9 +22,7 @@
 		<?php include_once 'private/header.php' ?>
 	</div>
     <div class="container">
-    	<div class="viewer">
-    	<?php include_once 'private/rooting.php' ?>
-    	</div>
+		<?php include_once 'private/rooting.php' ?>
     </div> <!-- /container -->
 <script src="public/js/main.js" type="text/javascript"></script>
 </body>
