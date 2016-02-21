@@ -22,6 +22,9 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Mail de reinitialisation mot de passe ( Ajax )
 	* Deconnection ( Ajax )
 2. PARTIE MONTAGE
+	* Apercu Webcam
+	* Liste des images superposables
+	* Bouton pour prendre la photo
 3. PARTIE GALERIE
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
@@ -31,11 +34,10 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
 	* Section principale
-		* Apercu webcam et Upload image
-		* Liste des images superposables
-		* Bouton pour prendre la photo
+		* Preview Final avec filter
 	* Section laterale
 		* Miniatures photos prises precedement
+	* Section footer
 		* Possibilite de supprimer les montages	
 3. PARTIE GALERIE
 	* Affichage de tout les montages de chaque membres ( pagination infinie )
