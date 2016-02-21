@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){ 
-
 	(function() {
 	    // The width and height of the captured photo. We will set the
 	    // width to the value defined here, but the height will be
@@ -104,6 +103,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	            var data = canvas.toDataURL('image/png');
 	            photo.setAttribute('src', data);
+				document.getElementById("output").style.display = "block";
+
 	        } else {
 	            clearphoto();
 	        }
@@ -115,3 +116,20 @@ document.addEventListener('DOMContentLoaded', function(){
 	})();
 
 }, false);
+
+function chooseFilter(el) {
+
+	var render_filter = document.getElementsByClassName("render-filter")[0];
+	render_filter.style.bottom = el.getAttribute("data-bottom") + 'px';
+	render_filter.style.left = el.getAttribute("data-left") + 'px';
+
+	var filter= document.createElement("img");
+	filter.setAttribute('src', el.src);
+	filter.style.width = el.getAttribute("data-width");
+
+	document.getElementsByClassName("render-filter")[0].innerHTML = "";
+	document.getElementsByClassName("render-filter")[0]
+		.appendChild(filter);
+
+	document.getElementById("startbutton").style.display = "block";
+};
