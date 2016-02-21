@@ -22,9 +22,10 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Mail de reinitialisation mot de passe ( Ajax )
 	* Deconnection ( Ajax )
 2. PARTIE MONTAGE
-	* Apercu Webcam
-	* Liste des images superposables
-	* Bouton pour prendre la photo
+	* Section principale
+		* Apercu Webcam
+		* Liste des images superposables
+		* Bouton pour prendre la photo
 3. PARTIE GALERIE
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
