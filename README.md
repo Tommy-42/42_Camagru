@@ -26,6 +26,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 		* Apercu Webcam
 		* Liste des images superposables
 		* Bouton pour prendre la photo
+		* Preview Final avec filter
 3. PARTIE GALERIE
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
@@ -34,8 +35,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 ## TODO
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
-	* Section principale
-		* Preview Final avec filter
 	* Section laterale
 		* Miniatures photos prises precedement
 	* Section footer
