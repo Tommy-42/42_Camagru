@@ -16,7 +16,6 @@ function is_log() {
 
 function check_base64_image($base64) {
 
-
     $img = imagecreatefromstring(base64_decode($base64));
     if (!$img) {
         return false;
