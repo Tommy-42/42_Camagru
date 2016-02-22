@@ -101,6 +101,14 @@ document.addEventListener('DOMContentLoaded', function(){
 	            canvas.height = height;
 	            context.drawImage(video, 0, 0, width, height);
 
+	            /* preview  rendu */
+				var img = document.getElementsByClassName("render-filter")[0].firstElementChild;
+				var filter= document.createElement("img");
+				filter.setAttribute('src', img.src);
+				filter.style.width = img.getAttribute("data-width");
+
+	            context.drawImage(filter, 0, 0, img.width, img.height);
+
 	            var data = canvas.toDataURL('image/png');
 	            photo.setAttribute('src', data);
 				document.getElementById("output").style.display = "block";
@@ -120,8 +128,6 @@ document.addEventListener('DOMContentLoaded', function(){
 function chooseFilter(el) {
 
 	var render_filter = document.getElementsByClassName("render-filter")[0];
-	render_filter.style.bottom = el.getAttribute("data-bottom") + 'px';
-	render_filter.style.left = el.getAttribute("data-left") + 'px';
 
 	var filter= document.createElement("img");
 	filter.setAttribute('src', el.src);
