@@ -192,16 +192,28 @@ a:-webkit-any-link {
 	cursor: pointer;
 }
 .render { position: relative; }
-.render-preview { position: relative; display: inline-block; }
+.render-preview { 
+	position: relative;
+	display: inline-block;
+	margin-bottom: 15px;
+}
 .render-filter { 
 	position: absolute;
 }
 .render-filter img { 
 	height: 100%;
 }
+
+#output {
+	display: inline-block;
+	width: 320px;
+	text-align: left;
+}
 #canvas { display: none; }
-#startbutton { display: none; }
-#output { display: none; }
+#startbutton, #saveButton { display: none; }
+
+#userPic { display: none; }
+#photo { display: none; }
 /*  MONTAGE*/
 
 
