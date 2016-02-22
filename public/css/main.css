@@ -185,7 +185,7 @@ a:-webkit-any-link {
 .p-success { color: green; margin-top: 15px; }
 /* INSCRIPTION */
 
-/*  MONTAGE*/
+/*  MONTAGE */
 .preview-filter {
 	height: 100%;
 	width: 100px;
@@ -195,12 +195,9 @@ a:-webkit-any-link {
 .render-preview { position: relative; display: inline-block; }
 .render-filter { 
 	position: absolute;
-	bottom: 10px;
-	left: 40px;
 }
 .render-filter img { 
 	height: 100%;
-	width: 250px;
 }
 #canvas { display: none; }
 #startbutton { display: none; }
