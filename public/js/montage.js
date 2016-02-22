@@ -18,12 +18,14 @@ document.addEventListener('DOMContentLoaded', function(){
 	    var video = null;
 	    var canvas = null;
 	    var photo = null;
+	    var user_pic = null;
 	    var startbutton = null;
 
 	    function startup() {
 	        video = document.getElementById('video');
 	        canvas = document.getElementById('canvas');
 	        photo = document.getElementById('photo');
+	        user_pic = document.getElementById('userPic');
 	        startbutton = document.getElementById('startbutton');
 
 	        navigator.getMedia = (navigator.getUserMedia ||
@@ -86,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	        var data = canvas.toDataURL('image/png');
 	        photo.setAttribute('src', data);
+	        user_pic.setAttribute('src', data);
 	    }
 
 	    // Capture a photo by fetching the current contents of the video
@@ -101,6 +104,9 @@ document.addEventListener('DOMContentLoaded', function(){
 	            canvas.height = height;
 	            context.drawImage(video, 0, 0, width, height);
 
+	            var user_data = canvas.toDataURL('image/png');
+	            user_pic.setAttribute('src', user_data);
+
 	            /* preview  rendu */
 				var img = document.getElementsByClassName("render-filter")[0].firstElementChild;
 				var filter= document.createElement("img");
@@ -111,7 +117,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	            var data = canvas.toDataURL('image/png');
 	            photo.setAttribute('src', data);
-				document.getElementById("output").style.display = "block";
+
+				document.getElementById("photo").style.display = "inline";
+				document.getElementById("saveButton").style.display = "inline";
 
 	        } else {
 	            clearphoto();
@@ -122,6 +130,48 @@ document.addEventListener('DOMContentLoaded', function(){
 	    // once loading is complete.
 	    window.addEventListener('load', startup, false);
 	})();
+
+	document.getElementById("saveButton")
+			.addEventListener("click", function(event) {
+
+		// get informations
+		var user_pic = document.getElementById("userPic").src;
+		var img = document.getElementsByClassName("render-filter")[0].firstElementChild;
+		var filter = img.src;
+		var send = 'save_img=1&user_pic=' + user_pic +
+			'&filter=' + filter;
+
+		// create AJAX ressources
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			// document.getElementsByClassName("p-error")[0].innerHTML = '';
+			// document.getElementsByClassName("p-success")[0].innerHTML = '';
+			if (xhttp.readyState == 4 && xhttp.status == 200) {
+				console.log(xhttp.responseText);
+				// var result = JSON.parse(xhttp.responseText);
+				// if( result == 'success' ) {
+				// 	document.getElementsByClassName("p-success")[0]
+				// 		.innerHTML = "<h3>Inscription validé.<br>Veuillez Activer votre compte<br>en cliquant sur le lien dans l'email</h3>";
+				// }
+				// else {
+				// 	if( Array.isArray(result) ) {
+				// 		for(i=0; i < result.length; i++) {
+				// 			document.getElementsByClassName("p-error")[0]
+				// 				.innerHTML += result[i] + "<br>";
+				// 		}
+				// 	}
+				// 	else {
+				// 		document.getElementsByClassName("p-error")[0]
+				// 				.innerHTML += result + "<br>";
+				// 	}
+				// }
+			}
+		};
+		xhttp.open("POST", "api/montage.php", true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send(send);
+	});
+
 
 }, false);
 
