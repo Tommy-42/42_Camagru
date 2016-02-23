@@ -111,8 +111,10 @@
 			}
 			else {
 				if( $result['active'] == 1 ) {
+					$_SESSION['user_id'] = $result['id'];
 					$_SESSION['user'] = $result['username'];
 					$_SESSION['email'] = $result['email'];
+
 					die( json_encode('success') );
 				}
 				else {
