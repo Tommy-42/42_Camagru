@@ -27,6 +27,8 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 		* Liste des images superposables
 		* Bouton pour prendre la photo
 		* Preview Final avec filter
+		* Save Picture
+		* Miniatures photos prises precedement
 3. PARTIE GALERIE
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
@@ -35,8 +37,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 ## TODO
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
-	* Section laterale
-		* Miniatures photos prises precedement
 	* Section footer
 		* Possibilite de supprimer les montages	
 3. PARTIE GALERIE
