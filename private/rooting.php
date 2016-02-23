@@ -7,7 +7,7 @@
 				break;
 			case 'montage':
 				if( is_log() )
-					include_once $path . '/public/view/montage.html';
+					include_once $path . '/public/view/montage.php';
 				else
 					header('Location: ?p=index');
 				break;
