@@ -120,7 +120,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 				document.getElementById("photo").style.display = "inline";
 				document.getElementById("saveButton").style.display = "inline";
-
+				if( document.getElementById("saveButton").classList.contains('disabled') )
+					document.getElementById("saveButton").classList.remove("disabled");
 	        } else {
 	            clearphoto();
 	        }
@@ -134,6 +135,11 @@ document.addEventListener('DOMContentLoaded', function(){
 	document.getElementById("saveButton")
 			.addEventListener("click", function(event) {
 
+		if( this.classList.contains('disabled') ) {
+			event.preventDefault();
+			event.stopPropagation();
+			return;
+		}
 		// get informations
 		var user_pic = document.getElementById("userPic").src;
 		var img = document.getElementsByClassName("render-filter")[0].firstElementChild;
@@ -147,29 +153,30 @@ document.addEventListener('DOMContentLoaded', function(){
 			// document.getElementsByClassName("p-error")[0].innerHTML = '';
 			// document.getElementsByClassName("p-success")[0].innerHTML = '';
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
-				console.log(xhttp.responseText);
-				// var result = JSON.parse(xhttp.responseText);
-				// if( result == 'success' ) {
-				// 	document.getElementsByClassName("p-success")[0]
-				// 		.innerHTML = "<h3>Inscription validé.<br>Veuillez Activer votre compte<br>en cliquant sur le lien dans l'email</h3>";
-				// }
-				// else {
-				// 	if( Array.isArray(result) ) {
-				// 		for(i=0; i < result.length; i++) {
-				// 			document.getElementsByClassName("p-error")[0]
-				// 				.innerHTML += result[i] + "<br>";
-				// 		}
-				// 	}
-				// 	else {
-				// 		document.getElementsByClassName("p-error")[0]
-				// 				.innerHTML += result + "<br>";
-				// 	}
-				// }
+				var result = JSON.parse(xhttp.responseText);
+				
+				if( result.hasOwnProperty('success' ) ) {
+					document.getElementById("recap")
+						.innerHTML += "<img src=" + result.success + "><br>";
+				}
+				else {
+					if( Array.isArray(result) ) {
+						for(i=0; i < result.length; i++) {
+							document.getElementsByClassName("p-error")[0]
+								.innerHTML += result[i] + "<br>";
+						}
+					}
+					else {
+						document.getElementsByClassName("p-error")[0]
+								.innerHTML += result + "<br>";
+					}
+				}
 			}
 		};
 		xhttp.open("POST", "api/montage.php", true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.send(send);
+		document.getElementById("saveButton").classList.add("disabled");
 	});
 
 
