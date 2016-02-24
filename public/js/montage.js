@@ -102,6 +102,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	        if (width && height) {
 	            canvas.width = width;
 	            canvas.height = height;
+	            
+	            context.translate(width, 0);
+  				context.scale(-1, 1);
+
 	            context.drawImage(video, 0, 0, width, height);
 
 	            var user_data = canvas.toDataURL('image/png');
@@ -112,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function(){
 				var filter= document.createElement("img");
 				filter.setAttribute('src', img.src);
 				filter.style.width = img.getAttribute("data-width");
+
+				context.translate(width, 0);
+  				context.scale(-1, 1);
 
 	            context.drawImage(filter, 0, 0, img.width, img.height);
 
@@ -132,8 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	    window.addEventListener('load', startup, false);
 	})();
 
-	document.getElementById("saveButton")
-			.addEventListener("click", function(event) {
+	document.getElementById("saveButton").addEventListener("click", function(event) {
 
 		if( this.classList.contains('disabled') ) {
 			event.preventDefault();
@@ -156,8 +162,13 @@ document.addEventListener('DOMContentLoaded', function(){
 				var result = JSON.parse(xhttp.responseText);
 				
 				if( result.hasOwnProperty('success' ) ) {
+					console.log(document.getElementById("recap").childNodes);
+					if( document.getElementById("recap").childNodes.length == 7 )
+						document.getElementById("recap").lastElementChild.remove();
 					document.getElementById("recap")
-						.innerHTML += "<img src=" + result.success + "><br>";
+						.innerHTML = '<div class="col-12"><img class="recap-img" src='+ result.success + '></div>' +
+						document.getElementById("recap").innerHTML;
+					;
 				}
 				else {
 					if( Array.isArray(result) ) {
