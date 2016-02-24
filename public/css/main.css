@@ -53,6 +53,8 @@ a:-webkit-any-link {
 }
 
 /* MISC */
+.no-padding-at-all { padding: 0 !important; }
+
 .text-uppercase { text-transform: uppercase; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
@@ -184,8 +186,8 @@ a:-webkit-any-link {
 	display: inline-block;
 	background-color: rgba(248, 248, 248, 0.8);
 	min-height: 100px;
-	padding: 10px 40px 10px 40px;
 	color: rgb(6, 89, 123);
+	margin-bottom: 15px;
 }
 /* MAIN */
 
@@ -195,6 +197,16 @@ a:-webkit-any-link {
 /* INSCRIPTION */
 
 /*  MONTAGE */
+.delete-icon:before {
+	content: "\e014";
+}
+.btn-delete-img { 
+	cursor: pointer;
+	position: absolute;
+	font-size: 22px;
+	left: 0;
+
+}
 video {
 	-webkit-transform: scaleX(-1);
 	transform: scaleX(-1);
@@ -217,10 +229,17 @@ video {
 .render-filter img { 
 	height: 100%;
 }
+.recap-img-div { position: relative; }
 .recap-img { 
 	height: 100%;
 	width: 100%;
+}
+#recap {
+	display: inline-block;
+	height: 470px;
+	width: 100%;
 	max-width: 320px;
+	overflow: auto;
 }
 
 #output {
@@ -235,7 +254,44 @@ video {
 #photo { display: none; }
 /*  MONTAGE*/
 
+/* MEDIA */
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+    .no-padding-at-xs { padding: 0 !important; }
+ 
+    .header { padding: 10px; }
+    .header-container ul { width: 100%; text-align: center; padding: 0; }
+    .header-container ul h1 { font-size: 20px;  }
 
+	.container {
+		margin-top: 75px;
+	}
+	.viewer { padding: 0; }
+	.render { padding: 0; }
+
+    #recap {
+		display: inline-block;
+		height: 470px;
+		width: 100%;
+		overflow: auto;
+	}
+	.recap-img { 
+		height: 100%;
+		width: 100%;
+	}
+    
+}
+@media only screen and (min-width: 1200px) {
+	.container {
+		width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+/* MEDIA */
 
 
 
