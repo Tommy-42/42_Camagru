@@ -6,11 +6,20 @@
 				<p class="p-error"></p>
 				<p class="p-success"></p>
 				<div class="pool-img col-12">
-					<img class="preview-filter" onclick="chooseFilter(this)" src="public/img/pool/filter1.png">
-					<img class="preview-filter" onclick="chooseFilter(this)" src="public/img/pool/filter2.png">
-					<img class="preview-filter" onclick="chooseFilter(this)" src="public/img/pool/filter3.png">
-					<img class="preview-filter" onclick="chooseFilter(this)" src="public/img/pool/filter4.png">
-					<img class="preview-filter" onclick="chooseFilter(this)" src="public/img/pool/filter5.png">
+				<?php
+
+					$filters = array_diff(scandir($path . '/public/img/pool/'), array('..', '.', '.DS_Store'));
+					$filters = array_values($filters);
+					foreach ($filters as $key => $filter) {
+						echo '
+							<img
+								class="preview-filter"
+								onclick="chooseFilter(this)"
+								src="public/img/pool/'.$filter.'"
+							>
+						';
+					}
+				?>
 				</div>
 				<div class="render col-12">
 					<div class="render-preview">
@@ -35,6 +44,20 @@
 			<div class="viewer col-12">
 				<h1>Recap</h1>
 				<div id="recap" class="row">
+				<?php
+					$lastImgs = getUserImgs(0, 5);
+
+					foreach ($lastImgs as $key => $img) {
+						echo '<div class="col-12">';
+						echo '
+							<img
+								class="recap-img"
+								src="private/galerie/'.$img['name'].'.png"
+							>
+						';
+						echo '</div>';
+					}
+				?>
 				</div>
 			</div>
 		</div>
