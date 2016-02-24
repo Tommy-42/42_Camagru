@@ -195,6 +195,10 @@ a:-webkit-any-link {
 /* INSCRIPTION */
 
 /*  MONTAGE */
+video {
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
 .preview-filter {
 	height: 100%;
 	width: 100px;
@@ -208,9 +212,15 @@ a:-webkit-any-link {
 }
 .render-filter { 
 	position: absolute;
+	z-index: 10;
 }
 .render-filter img { 
 	height: 100%;
+}
+.recap-img { 
+	height: 100%;
+	width: 100%;
+	max-width: 320px;
 }
 
 #output {
