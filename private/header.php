@@ -2,8 +2,8 @@
 	if( !empty($_SESSION['user']) ) {
 		echo '
 			<div class="header-container">
-				<ul class="text-left pull-left">
-					<li><h1 class="no-margin">CAMAGRU</h1></li>
+				<ul class="text-left pull-left web-title-ul">
+					<li><h1 class="no-margin web-title">CAMAGRU</h1></li>
 				</ul>
 				<ul class="list-inline text-right pull-right header-list">
 					<li>
@@ -24,8 +24,8 @@
 	else {
 ?>
 <div class="header-container">
-	<ul class="text-left pull-left">
-		<li><h1 class="no-margin">CAMAGRU</h1></li>
+	<ul class="text-left pull-left web-title-ul">
+		<li><h1 class="no-margin web-title">CAMAGRU</h1></li>
 	</ul>
 	<ul class="list-inline text-right pull-right header-list">
 		<li class="text-uppercase">
