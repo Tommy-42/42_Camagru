@@ -207,3 +207,26 @@ function chooseFilter(el) {
 
 	document.getElementById("startbutton").style.display = "block";
 };
+function removeImg(el) {
+
+	var img_id = el.previousSibling.value;
+	var send = 'delete_img=1&img_id=' + img_id;
+
+	// create AJAX ressources
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		// document.getElementsByClassName("p-error")[0].innerHTML = '';
+		// document.getElementsByClassName("p-success")[0].innerHTML = '';
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			var result = JSON.parse(xhttp.responseText);
+			
+			if( result == 'success' )
+				el.parentNode.remove();
+			else
+				console.log('error');
+		}
+	};
+	xhttp.open("POST", "api/montage.php", true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(send);
+}
