@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){ 
+	document.getElementsByClassName("pool-img")[0].style.display = 'inline-block';
 	(function() {
 	    // The width and height of the captured photo. We will set the
 	    // width to the value defined here, but the height will be
