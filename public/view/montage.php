@@ -1,8 +1,9 @@
 <div class="row">
-	<div class="col-12">
-		<div class="col-8">
+	<div class="col-12 no-padding-at-xs">
+		<div class="col-8 no-padding-at-xs">
 			<div class="viewer col-12">
 				<h1>Montage</h1>
+				<p>choisissez un filtre, prenez votre photo et ensuite enregistez la !</p>
 				<p class="p-error"></p>
 				<p class="p-success"></p>
 				<div class="pool-img col-12">
@@ -40,21 +41,23 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-4">
+		<div class="col-4 no-padding-at-xs">
 			<div class="viewer col-12">
 				<h1>Recap</h1>
 				<div id="recap" class="row">
 				<?php
-					$lastImgs = getUserImgs(0, 5);
+					$lastImgs = getUserImgs(0, 0, 'id DESC');
 
 					foreach ($lastImgs as $key => $img) {
-						echo '<div class="col-12">';
+						echo '<div class="recap-img-div col-12 no-padding-at-all">';
 						echo '
 							<img
 								class="recap-img"
 								src="private/galerie/'.$img['name'].'.png"
 							>
 						';
+						echo '<input type="hidden" class="img-id" value="'. $img['id'] .'">';
+						echo '<span class="icon delete-icon text-red btn-delete-img" onclick="removeImg(this)"></span>';
 						echo '</div>';
 					}
 				?>
