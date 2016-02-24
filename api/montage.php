@@ -64,5 +64,14 @@
 			die(json_encode($error));
 	}
 
+	/*
+	**	DELETE IMG
+	*/
+	if( !empty($_POST['delete_img']) ) {
+		if( !empty($_POST['img_id']) )
+			deleteUserImg(0, $_POST['img_id']); /* ($user_id if 0 == take logged user id, $img_id) */
+		else
+			die( json_encode('Bad img') );
+	}
 
 ?>
