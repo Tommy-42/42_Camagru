@@ -7,6 +7,7 @@ function d( $var, $die = true ) {
 
 	if( $die ) die;
 }
+
 function is_log() {
 	if( !empty($_SESSION['user']) && !empty($_SESSION['email']) )
 		return TRUE;
@@ -42,6 +43,40 @@ function generateRandomString($length = 10) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
+}
+
+/*
+**  Get Images of users
+** @param ressource $db DB ressource
+** @param int $user_id User_id if 0 get current log user
+** @param int $limit limit number of imgs get
+*/
+function getUserImgs($user_id = 0, $limit = 0) {
+   
+    global $db;
+
+    if( $user_id == 0 )
+        $user_id = $_SESSION['user_id'];
+
+    if( $limit == 0 ) {
+
+        $sql = 'SELECT * FROM images WHERE user_id = :user_id';
+        $mysql = $db->prepare($sql);
+        $mysql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+    }
+    else {
+    
+        $sql = 'SELECT * FROM images WHERE user_id = :user_id LIMIT :l';
+        $mysql = $db->prepare($sql);
+        $mysql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+        $mysql->bindValue(':l', $limit, PDO::PARAM_INT);
+    }
+
+    $mysql->execute();
+    $result = $mysql->fetchAll( PDO::FETCH_ASSOC );
+    if( empty($result) )
+        return false;
+    return $result;
 }
 
 ?>
