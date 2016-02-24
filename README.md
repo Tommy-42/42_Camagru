@@ -28,17 +28,16 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 		* Bouton pour prendre la photo
 		* Preview Final avec filter
 		* Save Picture
+	* Section laterale
 		* Miniatures photos prises precedement
+		* Possibilite de supprimer les montages
 3. PARTIE GALERIE
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
 
-
 ## TODO
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
-	* Section footer
-		* Possibilite de supprimer les montages	
 3. PARTIE GALERIE
 	* Affichage de tout les montages de chaque membres ( pagination infinie )
 	* Commentaires et Like des montages si connecté
