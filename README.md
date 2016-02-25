@@ -32,6 +32,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 		* Miniatures photos prises precedement
 		* Possibilite de supprimer les montages
 3. PARTIE GALERIE
+	* Affichage de tout les montages de chaque membres ( pagination infinie )
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
 
@@ -39,9 +40,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
 3. PARTIE GALERIE
-	* Affichage de tout les montages de chaque membres ( pagination infinie )
 	* Commentaires et Like des montages si connecté
 	* Lorsque Commentaires sur un montage, notif email a l'auteur
-	* Pouvoir partager ses images sur les réseaux sociaux.
-	* Pouvoir faire un rendu d’un GIF animé
 4. PARTIE SQL
