@@ -62,6 +62,24 @@ function generateRandomString( $length = 10 ) {
 }
 
 /*
+** Get all users images
+** @param string $order 'table row name[ ]order' to sort result [ASC|DESC]
+*/
+function getAllUsersImgs( $order = 'id ASC' ) {
+   
+    global $db;
+   
+    $sql = 'SELECT * FROM images WHERE 1 ORDER BY ' . $order;
+    $mysql = $db->prepare($sql);
+    $mysql->execute();
+
+    $result = $mysql->fetchAll( PDO::FETCH_ASSOC );
+    if( empty($result) )
+        return false;
+    return $result;
+}
+
+/*
 ** Get Images of users
 ** @param int $user_id User_id if 0 get current log user
 ** @param int $limit limit number of imgs get
