@@ -12,7 +12,11 @@
 
 	// create database object
 	$db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD, $DB_OPTIONS);
+	
+	opcache_reset();
 
 	ob_start("ob_gzhandler");
+
+	header("Content-Type: text/html");
 
 ?>
