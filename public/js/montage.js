@@ -157,13 +157,12 @@ document.addEventListener('DOMContentLoaded', function(){
 		// create AJAX ressources
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
-			// document.getElementsByClassName("p-error")[0].innerHTML = '';
-			// document.getElementsByClassName("p-success")[0].innerHTML = '';
+			document.getElementsByClassName("p-error")[0].innerHTML = '';
+			document.getElementsByClassName("p-success")[0].innerHTML = '';
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
 				var result = JSON.parse(xhttp.responseText);
 				
 				if( result.hasOwnProperty('success' ) ) {
-					console.log(document.getElementById("recap").childNodes);
 					if( document.getElementById("recap").childNodes.length == 7 )
 						document.getElementById("recap").lastElementChild.remove();
 					document.getElementById("recap")
@@ -190,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function(){
 		xhttp.send(send);
 		document.getElementById("saveButton").classList.add("disabled");
 	});
+	
 
 
 }, false);
