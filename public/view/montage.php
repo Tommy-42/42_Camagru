@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-12 no-padding-at-xs">
-		<div class="col-8 no-padding-at-xs">
+		<div class="col-8 col-xs-12 no-padding-at-xs">
 			<div class="viewer col-12">
 				<h1>Montage</h1>
 				<p>choisissez un filtre, prenez votre photo et ensuite enregistez la !</p>
@@ -41,7 +41,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-4 no-padding-at-xs">
+		<div class="col-4 col-xs-12 no-padding-at-xs">
 			<div class="viewer col-12">
 				<h1>Recap</h1>
 				<div id="recap" class="row">
