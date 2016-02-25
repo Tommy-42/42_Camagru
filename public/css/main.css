@@ -202,6 +202,64 @@ a:-webkit-any-link {
 }
 /* MAIN */
 
+/* GALERIE */
+
+.page-container { display: none; }
+.page-container-count { display: none; }
+
+.galerie div:nth-child(1) { display: block; }
+.galerie div:nth-child(2) { display: block; }
+
+.galerie-img { 
+	height: 100%;
+	width: 100%;
+	max-width: 320px;
+	cursor: pointer;
+}
+
+.page-left {
+	cursor: pointer;
+	margin-right: 5px;
+	font-weight: 900;
+	color: rgba(5, 183, 237, 1);
+}
+.page-right {
+	cursor: pointer;
+	margin-left: 5px;
+	font-weight: 900;
+	color: rgba(5, 183, 237, 1);
+}
+.modal-dismiss {
+	cursor: pointer;
+	float: right;
+	font-size: 20px;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+#modal {
+	display: none;
+	z-index: 10;
+	position: absolute;
+	top: 50px;
+	left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+	width: 80%;
+	height: 95%;
+	background-color: rgba(248, 248, 248, 0.6)
+}
+.modal-is-on {
+	position: absolute;
+	top: 37px;
+	left: 0;
+	background-color: rgba(29, 29, 29, 0.77);
+	height: 100%;
+	width: 100%;
+}
+/* GALERIE */
+
 /* INSCRIPTION */
 .p-error { color: red; margin-bottom: 15px; }
 .p-success { color: green; margin-top: 15px; }
@@ -271,10 +329,21 @@ video {
 
 /* MEDIA */
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    [class*="col-"] {
-        width: 100%;
-    }
+    /* Responsive GRID */
+	/* http://www.w3schools.com/css/css_rwd_grid.asp */
+	.col-xs-1 {width: 8.33%;}
+	.col-xs-2 {width: 16.66%;}
+	.col-xs-3 {width: 25%;}
+	.col-xs-4 {width: 33.33%;}
+	.col-xs-5 {width: 41.66%;}
+	.col-xs-6 {width: 50%;}
+	.col-xs-7 {width: 58.33%;}
+	.col-xs-8 {width: 66.66%;}
+	.col-xs-9 {width: 75%;}
+	.col-xs-10 {width: 83.33%;}
+	.col-xs-11 {width: 91.66%;}
+	.col-xs-12 {width: 100%;}
+
     .no-padding-at-xs { padding: 0 !important; }
  
     .header { padding: 10px; }
@@ -286,7 +355,28 @@ video {
 	}
 	.viewer { padding: 0; }
 	.render { padding: 0; }
+	
+	.modal {
+		z-index: 10;
+		position: absolute;
+		top: 80px;
+		left: 0;
+	    right: 0;
+	    margin-left: auto;
+	    margin-right: auto;
 
+		width: 80%;
+		height: 95%;
+		background-color: rgba(248, 248, 248, 0.6)
+	}
+	.modal-is-on {
+		position: absolute;
+		top: 72px;
+		left: 0;
+		background-color: rgba(29, 29, 29, 0.77);
+		height: 100%;
+		width: 100%;
+	}
     #recap {
 		display: inline-block;
 		height: 470px;
