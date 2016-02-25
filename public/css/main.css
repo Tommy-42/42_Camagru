@@ -84,6 +84,7 @@ a:-webkit-any-link {
 	font-weight: 400;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
+	cursor: pointer;
 }
 
 .form-group { 
@@ -173,7 +174,6 @@ a:-webkit-any-link {
 .logout-icon:before {
 	content: "\e017";
 }
-.btn-logout { cursor: pointer; }
 /* HEADER */
 
 /* LOG */
@@ -229,11 +229,10 @@ a:-webkit-any-link {
 	font-weight: 900;
 	color: rgba(5, 183, 237, 1);
 }
-.modal-dismiss {
+#modal-dismiss {
 	cursor: pointer;
 	float: right;
 	font-size: 20px;
-	margin-top: 5px;
 	margin-right: 5px;
 }
 #modal {
@@ -246,17 +245,49 @@ a:-webkit-any-link {
     margin-left: auto;
     margin-right: auto;
 
+    padding: 10px;
 	width: 80%;
 	height: 95%;
 	background-color: rgba(248, 248, 248, 0.6)
 }
-.modal-is-on {
+#modal-is-on {
 	position: absolute;
 	top: 37px;
 	left: 0;
 	background-color: rgba(29, 29, 29, 0.77);
 	height: 100%;
 	width: 100%;
+}
+#modal-box {
+	margin-top: 10px;
+	padding: 5px;
+}
+#tumbnail-img { display: inline-block; }
+#modal-preview-img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	max-width: 320px;
+}
+#img-infos {
+	width: 100%;
+	height: 19px;
+	max-width: 320px;
+	background-color: rgba(29, 29, 29, 0.77);
+	padding-left: 5px;
+}
+#img-infos input {
+	width: 100%;
+}
+.like-icon:before {
+	color: white;
+	font-size: 15px;
+	content: "\e005";
+}
+.liked-icon:before {
+	color: red;
+	font-size: 15px;
+	content: "\e005";
 }
 /* GALERIE */
 
@@ -356,7 +387,7 @@ video {
 	.viewer { padding: 0; }
 	.render { padding: 0; }
 	
-	.modal {
+	#modal {
 		z-index: 10;
 		position: absolute;
 		top: 80px;
@@ -369,7 +400,7 @@ video {
 		height: 95%;
 		background-color: rgba(248, 248, 248, 0.6)
 	}
-	.modal-is-on {
+	#modal-is-on {
 		position: absolute;
 		top: 72px;
 		left: 0;
