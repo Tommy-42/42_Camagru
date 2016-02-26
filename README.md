@@ -35,6 +35,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Affichage de tout les montages de chaque membres ( pagination infinie )
 	* Like images galerie si connecté
 	* Commentaires des montages si connecté
+	* Lorsque Commentaires sur un montage, notif email a l'auteur
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
 
@@ -42,5 +43,4 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
 3. PARTIE GALERIE
-	* Lorsque Commentaires sur un montage, notif email a l'auteur
 4. PARTIE SQL
