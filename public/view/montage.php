@@ -30,6 +30,10 @@
 							<video id="video">Video stream not available.</video>
 							<button class="btn btn-success" id="startbutton">Prendre la Photo</button> 
 						</div>
+						<div id="upload-box" class="col-12">
+							<input type="file" id="file-select" name="photos[]" multiple/>
+							<button class="btn btn-warning btn-xs" id="cancel-button">Annuler</button>
+						</div>
 					</div>
 					<div id="output">
 						<canvas id="canvas">
