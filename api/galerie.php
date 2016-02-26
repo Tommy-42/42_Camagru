@@ -138,13 +138,36 @@
 		if( strlen($comment) < 1 || strlen($comment) > 140 )
 			die( json_encode('error msg too long') );
 
-	    $img = 'SELECT id FROM images WHERE img_id = :img_id';
-		$mysql = $db->prepare($like);
+	    $img = 'SELECT id FROM images WHERE id = :img_id';
+		$mysql = $db->prepare($img);
 		$mysql->bindValue(':img_id', $img_id, PDO::PARAM_INT);
 		$mysql->execute();
 
-    	if( empty($mysql->fetchAll( PDO::FETCH_ASSOC )[0]) ) {
+    	if( !empty($mysql->fetchAll( PDO::FETCH_ASSOC )[0]) ) {
 			
+    		$select = '
+    			SELECT u.username, u.email
+    			FROM images as i
+    			LEFT JOIN users as u ON( u.id = i.user_id )
+    			WHERE i.id = :img_id'
+    		;
+    		$mysql = $db->prepare($select);
+			$mysql->bindValue(':img_id', $img_id, PDO::PARAM_INT);
+			$mysql->execute();
+
+			$data = $mysql->fetch( PDO::FETCH_ASSOC );
+
+    		$to = $data['email'];
+			$from = 'noreply@camagru.fr';
+			$subject = 'Vous avez recus un nouveau commentaire';
+			$message = "
+				Bonjour ". $data['username'] .",\n
+				Une personne a commenté une de vos photos.
+			";
+
+			$headers = "From: $from"; 
+			$ok = @mail($to, $subject, $message, $headers, "-f " . $from);
+
 			$insert = 'INSERT INTO comments (id, comment, img_id, user_id) VALUES ("", :comment, :img_id, :user_id)';
 			$mysql = $db->prepare($insert);
 			$mysql->bindValue(':comment', $comment);
@@ -153,5 +176,8 @@
 			$mysql->execute();
 			if( $mysql->rowCount() == 1 )
 				die( json_encode('success') );
+    	}
+    	else {
+    		die( json_encode('false') );
     	}
 	}
