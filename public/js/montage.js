@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){ 
+document.addEventListener('DOMContentLoaded', function() { 
 	document.getElementsByClassName("pool-img")[0].style.display = 'inline-block';
 	(function() {
 	    // The width and height of the captured photo. We will set the
@@ -189,8 +189,9 @@ document.addEventListener('DOMContentLoaded', function(){
 		xhttp.send(send);
 		document.getElementById("saveButton").classList.add("disabled");
 	});
-	
 
+	document.getElementById("file-select").addEventListener("change", chooseUpload);
+	document.getElementById("cancel-button").addEventListener("click", resetUpload);
 
 }, false);
 
@@ -207,7 +208,66 @@ function chooseFilter(el) {
 		.appendChild(filter);
 
 	document.getElementById("startbutton").style.display = "block";
-};
+	document.getElementById("upload-box").style.display = "block";
+}
+function chooseUpload(event) {
+	var width = 320; // We will scale the photo width to this
+    var height = 240; // This will be computed based on the input stream
+    var canvas = document.getElementById('canvas');
+    var photo = document.getElementById('photo');
+    var user_pic = document.getElementById('userPic');
+    var startbutton = document.getElementById('startbutton');
+
+    var context = canvas.getContext('2d');
+    if (width && height) {
+        canvas.width = width;
+        canvas.height = height;
+        
+		var upload = new Image;
+		upload.onload = function() {
+		    context.drawImage(upload, 0, 0, width, height);
+
+		    var user_data = canvas.toDataURL('image/png');
+            user_pic.setAttribute('src', user_data);
+
+            /* preview  rendu */
+			var img = document.getElementsByClassName("render-filter")[0].firstElementChild;
+			var filter= document.createElement("img");
+			filter.setAttribute('src', img.src);
+			filter.style.width = img.getAttribute("data-width");
+
+            context.drawImage(filter, 0, 0, width, height);
+
+            var data = canvas.toDataURL('image/png');
+            photo.setAttribute('src', data);
+
+            document.getElementById("photo").style.display = "inline";
+			document.getElementById("saveButton").style.display = "inline";
+			if( document.getElementById("saveButton").classList.contains('disabled') )
+				document.getElementById("saveButton").classList.remove("disabled");
+		}
+		upload.src = URL.createObjectURL(event.target.files[0]);
+	}
+}
+function resetUpload() {
+
+    var canvas = document.getElementById('canvas');
+    var photo = document.getElementById('photo');
+    var user_pic = document.getElementById('userPic');
+    var file_select = document.getElementById('file-select');
+
+	var context = canvas.getContext('2d');
+    context.fillStyle = "#AAA";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    var data = canvas.toDataURL('image/png');
+    photo.setAttribute('src', data);
+    user_pic.setAttribute('src', data);
+    file_select.value = '';
+
+    document.getElementById("photo").style.display = "none";
+	document.getElementById("saveButton").style.display = "none";
+}
 function removeImg(el) {
 
 	var img_id = el.previousSibling.value;
