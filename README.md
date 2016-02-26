@@ -42,5 +42,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 ## TODO
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
+	* choix upload d'image a la place de la cam
 3. PARTIE GALERIE
 4. PARTIE SQL
