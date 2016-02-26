@@ -38,6 +38,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* Lorsque Commentaires sur un montage, notif email a l'auteur
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
+5. PARTIE SERVER
 
 ## TODO
 1. PARTIE UTILISATEUR
@@ -45,3 +46,5 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 	* choix upload d'image a la place de la cam
 3. PARTIE GALERIE
 4. PARTIE SQL
+5. PARTIE SERVER
+	* faire le fichier setup.php
