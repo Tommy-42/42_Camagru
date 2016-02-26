@@ -29,6 +29,10 @@
 	</ul>
 	<ul class="list-inline text-right pull-right header-list">
 		<li class="text-uppercase">
+			<a href="?p=index">Galerie</a>
+		</li>
+		<li class="separator">&nbsp;|&nbsp;</li>
+		<li class="text-uppercase">
 			<a href="?p=inscription">inscription</a>
 		</li>
 		<li class="separator">&nbsp;|&nbsp;</li>
