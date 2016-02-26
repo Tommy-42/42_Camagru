@@ -28,6 +28,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 		* Bouton pour prendre la photo
 		* Preview Final avec filter
 		* Save Picture
+		* choix upload d'image a la place de la cam
 	* Section laterale
 		* Miniatures photos prises precedement
 		* Possibilite de supprimer les montages
@@ -43,7 +44,6 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 ## TODO
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
-	* choix upload d'image a la place de la cam
 	* faire un footer
 3. PARTIE GALERIE
 	* faire un footer
