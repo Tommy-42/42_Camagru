@@ -44,7 +44,9 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 1. PARTIE UTILISATEUR
 2. PARTIE MONTAGE
 	* choix upload d'image a la place de la cam
+	* faire un footer
 3. PARTIE GALERIE
+	* faire un footer
 4. PARTIE SQL
 5. PARTIE SERVER
 	* faire le fichier setup.php
