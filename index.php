@@ -24,6 +24,9 @@
     <div class="container no-padding-at-xs">
 		<?php include_once 'private/rooting.php' ?>
     </div> <!-- /container -->
+    <div class="footer">
+		<?php include_once 'private/footer.php' ?>
+    </div>
 <script src="public/js/main.js" type="text/javascript"></script>
 </body>
 </html>
