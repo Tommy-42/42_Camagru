@@ -120,6 +120,10 @@ a:-webkit-any-link {
 	border: 1px solid transparent;
 	border-radius: 4px;
 }
+.btn-xs {
+	padding: 2px 4px;
+	font-size: 12px;
+}
 
 .btn-default {
 	color: #333;
@@ -363,7 +367,7 @@ video {
 	text-align: left;
 }
 #canvas { display: none; }
-#startbutton, #saveButton { display: none; }
+#startbutton, #saveButton, #upload-box { display: none; }
 
 #userPic { display: none; }
 #photo { display: none; }
