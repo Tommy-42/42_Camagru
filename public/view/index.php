@@ -43,23 +43,33 @@
 			<span id="modal-dismiss" class="icon delete-icon text-red" onclick="hideModal()"></span>
 		</div>
 		<div class="col-12 no-padding-at-xs">
-			<div id="modal-box">
-				<div id="tumbnail-img" class="no-padding-at-all">	
-					<img id="modal-preview-img" src="" data-id="">
-					<div id="img-infos">
-						<div class="col-4 no-padding-at-all">
-							<span class="pull-left"><span id="like-number">0</span> Like(s)</span>
-							<span id="like-img-btn" onclick="likeImg()" class="icon like-icon"></span>
-						</div>
-						<div class="col-8 no-padding-at-all">
-							<?php if( is_log() ) { ?>
-								<input type="text" placeholder="Ajouter un com !" value="">
-							<?php } ?>
+			<div id="modal-box row">
+				<div class="col-12">
+					<div id="tumbnail-img" class="no-padding-at-all">	
+						<img id="modal-preview-img" src="" data-id="">
+						<div id="img-infos">
+							<div class="col-4 no-padding-at-all">
+								<span class="pull-left"><span id="like-number">0</span> Like(s)</span>
+								<?php 
+									if( is_log() ) { 
+										echo '<span id="like-img-btn" onclick="likeImg()" class="icon like-icon"></span>';
+									}
+								?>
+							</div>
+							<div class="col-8 no-padding-at-all">
+								<?php
+									if( is_log() ) {
+										echo '<input onkeydown="commentImg(this)" id="comment-input" type="text" placeholder="Ajouter un com ! (140 max)" value="" maxlength="140">';
+									}
+								?>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div id="likes"></div>
-				<div id="comments"></div>
+				<div class="col-12">
+					<div id="comments">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
