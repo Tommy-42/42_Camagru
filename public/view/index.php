@@ -61,7 +61,7 @@
 							<div class="col-8 no-padding-at-all">
 								<?php
 									if( is_log() ) {
-										echo '<input onkeydown="commentImg(this)" id="comment-input" type="text" placeholder="Ajouter un com ! (140 max)" value="" maxlength="140">';
+										echo '<input onkeydown="commentImg(event, this)" id="comment-input" type="text" placeholder="Ajouter un com ! (140 max)" value="" maxlength="140">';
 									}
 								?>
 							</div>
