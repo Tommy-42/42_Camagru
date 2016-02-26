@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){ 
+document.addEventListener('DOMContentLoaded', function() { 
 
 	// when submit button is hit
 	if( document.getElementsByClassName("btn-logout").length == 1 ) {
