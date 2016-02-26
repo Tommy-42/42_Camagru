@@ -270,8 +270,8 @@ a:-webkit-any-link {
 	max-width: 320px;
 }
 #img-infos {
+	display: inline-block;
 	width: 100%;
-	height: 19px;
 	max-width: 320px;
 	background-color: rgba(29, 29, 29, 0.77);
 	padding-left: 5px;
@@ -289,6 +289,19 @@ a:-webkit-any-link {
 	font-size: 15px;
 	content: "\e005";
 }
+#comments {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	max-width: 320px;
+	background-color: rgba(29, 29, 29, 0.77);
+}
+.com-box p {
+	background-color: rgba(97, 97, 97, 0.77);
+	padding: 4px;
+	margin-bottom: 4px;
+}
+.com-username { font-style: italic; }
 /* GALERIE */
 
 /* INSCRIPTION */
