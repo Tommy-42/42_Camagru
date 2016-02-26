@@ -39,12 +39,16 @@
 
 	    	$imgLikes = $mysql->fetchAll( PDO::FETCH_ASSOC )[0];
 
-	    	$comments = 'SELECT count(*) FROM comments WHERE img_id = :img_id';
+	    	$comments = '
+	    		SELECT c.comment, u.username
+	    		FROM comments as c
+	    		LEFT JOIN users as u ON( u.id = c.user_id )
+	    		WHERE img_id = :img_id';
 			$mysql = $db->prepare($comments);
 			$mysql->bindValue(':img_id', $img_id, PDO::PARAM_INT);
 			$mysql->execute();
 
-	    	$imgcomments = $mysql->fetchAll( PDO::FETCH_ASSOC );
+	    	$imgComments = $mysql->fetchAll( PDO::FETCH_ASSOC );
 
 	    	$result = array(
 	    		'success' => array(
@@ -57,6 +61,30 @@
     	}
 	}
 
+	if( !empty($_POST['get_comments']) ) {
+		
+		$img_id = $_POST['img_id'];
+		if( !is_numeric($img_id) )
+			die( json_encode('error img') );
+
+		$comments = '
+    		SELECT c.comment, u.username
+    		FROM comments as c
+    		LEFT JOIN users as u ON( u.id = c.user_id )
+    		WHERE img_id = :img_id';
+		$mysql = $db->prepare($comments);
+		$mysql->bindValue(':img_id', $img_id, PDO::PARAM_INT);
+		$mysql->execute();
+
+    	$imgComments = $mysql->fetchAll( PDO::FETCH_ASSOC );
+
+    	$result = array(
+    		'success' => array(
+	    		'comments' => $imgComments
+	    	)
+    	);
+		die( json_encode($result) );
+	}
 	/*
 	**	add a like to an img
 	**	max 140 chars
@@ -100,6 +128,30 @@
 	**	add comment on img
 	**	max 140 chars
 	*/
-	if( !empty($_POST['post_com']) ) {
+	if( !empty($_POST['post_comment']) ) {
 		
+		$img_id = $_POST['img_id'];
+		$user_id = $_SESSION['user_id'];
+		$comment = strip_tags($_POST['comment']);
+		if( !is_numeric($img_id) )
+			die( json_encode('error img') );
+		if( strlen($comment) < 1 || strlen($comment) > 140 )
+			die( json_encode('error msg too long') );
+
+	    $img = 'SELECT id FROM images WHERE img_id = :img_id';
+		$mysql = $db->prepare($like);
+		$mysql->bindValue(':img_id', $img_id, PDO::PARAM_INT);
+		$mysql->execute();
+
+    	if( empty($mysql->fetchAll( PDO::FETCH_ASSOC )[0]) ) {
+			
+			$insert = 'INSERT INTO comments (id, comment, img_id, user_id) VALUES ("", :comment, :img_id, :user_id)';
+			$mysql = $db->prepare($insert);
+			$mysql->bindValue(':comment', $comment);
+			$mysql->bindValue(':img_id', $img_id, PDO::PARAM_INT);
+			$mysql->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+			$mysql->execute();
+			if( $mysql->rowCount() == 1 )
+				die( json_encode('success') );
+    	}
 	}
