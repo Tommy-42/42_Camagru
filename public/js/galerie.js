@@ -92,7 +92,9 @@ function likeImg() {
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send(send);
 }
-function commentImg(el) {
+function commentImg(event, el) {
+
+	console.log( event );
 
     var key = event.which || event.keyCode;
     if (key === 13) { // 13 is enter
