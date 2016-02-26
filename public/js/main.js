@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				if (xhttp.readyState == 4 && xhttp.status == 200) {
 					var result = JSON.parse(xhttp.responseText);
 					console.log(result);
-					location.href = "?p=connexion";
+					location.href = "?p=index";
 				}
 			};
 			xhttp.open("POST", "api/logout.php", true);
