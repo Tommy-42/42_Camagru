@@ -25,6 +25,8 @@ a:-webkit-any-link {
 	color: inherit;
 }
 
+.titanic { float:none; }
+
 /* Responsive GRID */
 /* http://www.w3schools.com/css/css_rwd_grid.asp */
 .col-1 {width: 8.33%;}
