@@ -40,6 +40,7 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 4. PARTIE SQL
 	* USERS / COMMENTS / LIKES / MONTAGES 100%
 5. PARTIE SERVER
+	* setup.php -> create user db and db + tables
 
 ## TODO
 1. PARTIE UTILISATEUR
@@ -47,4 +48,3 @@ Une partie Galerie des montages avec Commentaires et Likes possible des membres.
 3. PARTIE GALERIE
 4. PARTIE SQL
 5. PARTIE SERVER
-	* faire le fichier setup.php
